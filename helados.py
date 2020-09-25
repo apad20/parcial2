@@ -14,6 +14,18 @@
 #al finalizar el programa muestra el precio del helado
 #con el topping seleccionado (o ninguno)
 
+#####   Definición de funciones      ######
+#creamos una función
+def topping (lista):
+    if lista[0]>0:  #Si hay existencia
+        lista[0] = lista[0] - 1   #descontamos 1 a la existencia
+        return str(helado + lista[1])  #indicamos el total
+    else:
+        print("NO TENEMOS ESTE TOPPING, LO SENTIMOS")
+        return str(helado)
+
+
+#####   Flujo principal      ######
 #Inicialización de variables
 #La Lista está conformada por la exitencia y el precio.
 helado = 1.90 #precio del helado
@@ -35,15 +47,6 @@ print("Bienvenido a la Heladería \n"
 
 #Solicitamos al usuario un número
 respuesta = input()
-
-#creamos una función
-def topping (lista):
-    if lista[0]>0:  #Si hay existencia
-        lista[0] = lista[0] - 1   #descontamos 1 a la existencia
-        return str(helado + lista[1])  #indicamos el total
-    else:
-        print("NO TENEMOS ESTE TOPPING, LO SENTIMOS")
-        return str(helado)
 
 #Trabajamos con la respuesta del usuario
 #Estructura de control
