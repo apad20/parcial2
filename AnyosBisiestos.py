@@ -28,6 +28,9 @@ if multiplo(4,anyo):
         print("bisiesto")
     else:
         print("no es bisiesto")
+else:
+    #Anyo no es multiplo de 4, entonces no es bisiesto
+    print("no es bisiesto")
 
 #Evaluación opción 2
 if multiplo(4,anyo) and not multiplo(100,anyo):
