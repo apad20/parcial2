@@ -4,7 +4,9 @@
 
 #Análisis del problema, expresión lógica.
 
-# Si x es MULTIPLO de 4 AND no es MULTIPLO de 100 pero AND  MULTIPLO de 400.
+# ****  Si x MULTIPLO de 4 AND NOT MULTIPLO de 100 OR MULTIPLO de 400.
+# Si x es múltiplo de 4, debemos evaluar que no sea múltiplo de 100,
+# pero, si es el caso que si sea múltiplo de 100,
 
 #Método llamado Múltiplo, este método recibe 2 variales, primera es el multiplo y
 #la segunda es el año.
@@ -16,27 +18,9 @@ def multiplo(mul, anyo):
 
 #Flujo principal
 anyo = int(input("Introduce algún año"))
-#Pregunto si el anyo es múltiplo de 4
-multiplo(4,anyo)
-multiplo(100,anyo)
-multiplo(400,anyo)
-
 
 #Evaluación opcion 1
-if multiplo(4,anyo):
-    if not multiplo(100,anyo) and multiplo(400,anyo):
-        print("bisiesto")
-    else:
-        print("no es bisiesto")
-
-#Evaluación opción 2
-if multiplo(4,anyo) and not multiplo(100,anyo):
-        print("bisiesto")
-elif multiplo(400,anyo):
-        print("bisiesto")
+if multiplo(4,anyo) and not multiplo(100,anyo) or multiplo(400,anyo):
+    print("bisiesto")
 else:
     print("no es bisiesto")
-
-#Evaluación 3
-if multiplo(4,anyo) and ( multiplo(100,anyo) or multiplo(400,anyo)):
-
