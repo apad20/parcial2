@@ -3,10 +3,10 @@
 # y la cantidad de elementos que están por debajo del promedio, y muestre los resultados.
 
 #Definición de función Enteros
-def solicitaEneteros():
+def solicitaEneteros(n):
     #lista vacía
     enteros=[]
-    for i in range(0,30):
+    for i in range(0,n):
         #solicitando al usuario un número entero
         entero = int(input("Introduce un entero:"))
         #agrego un elemento a la lista
@@ -22,7 +22,8 @@ def promedio(lista):
         # elemenos que conforma la lista
     return suma / len(lista)
 
-#Elemenos superiores al promedio
+#Método para calcular elemenos superiores e inferiores al promedio
+#devuelve una tupla
 def contadorElementos(lista, promedio):
     cmy=0
     cmn=0
@@ -35,13 +36,13 @@ def contadorElementos(lista, promedio):
     return cmy,cmn
 
 def mostrarResultados (promedio, mym):
-    m=list(mym)
     print ("El promedio de los elmentos es ", promedio,
-           "\nlos números mayores al promedio son ", m[0],
-           "\nlos números menores al promedio son ", m[1])
+           "\nlos números mayores al promedio son ", mym[0],
+           "\nlos números menores al promedio son ", mym[1])
 
 #Flujo principal
-l = solicitaEneteros()
+n = int(input("¿De cuántos números enteros deseas calcular el promedio?"))
+l = solicitaEneteros(n)
 p = promedio(l)
 t = contadorElementos(l,p)
 mostrarResultados(p,t)
