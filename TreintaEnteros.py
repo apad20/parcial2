@@ -40,9 +40,14 @@ def mostrarResultados (promedio, mym):
            "\nlos números mayores al promedio son ", mym[0],
            "\nlos números menores al promedio son ", mym[1])
 
+#Podemos agrupar el flujo principal en un método llamado Main para después llamarlo llamarlo.
+def main():
+    n = int(input("¿De cuántos números enteros deseas calcular el promedio?"))
+    l = solicitaEneteros(n)
+    p = promedio(l)
+    t = contadorElementos(l, p)
+    mostrarResultados(p, t)
+
 #Flujo principal
-n = int(input("¿De cuántos números enteros deseas calcular el promedio?"))
-l = solicitaEneteros(n)
-p = promedio(l)
-t = contadorElementos(l,p)
-mostrarResultados(p,t)
+main()
+
