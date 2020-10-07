@@ -37,7 +37,7 @@ def contadorElementos(lista, promedio):
 
 def mostrarResultados (promedio, mym):
     print ("El promedio de los elmentos es ", promedio,
-           "\nlos números mayores al promedio son ", mym[0],
+           "\nlos números mayores al promedio son ", mym[0], #Al llamar un elemento de tupla para imprimir utilizamos []
            "\nlos números menores al promedio son ", mym[1])
 
 #Podemos agrupar el flujo principal en un método llamado Main para después llamarlo llamarlo.
