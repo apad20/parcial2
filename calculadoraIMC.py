@@ -4,9 +4,6 @@
 # Elabora un programa con interface gráfica que calcule el IMC de una persona, solicitando peso en kg y estatura en m,
 # calcule el IMC y diga si tiene o no sobrepeso.
 
-
-
-
 #DISEÑO DE INTERFACE
 #Paso 1 - Importar libreria
 import PySimpleGUI as sg
@@ -15,16 +12,22 @@ import PySimpleGUI as sg
 #Función para calcular el IMC
 def calcularIMC(v):
     # Proceso de cálculo IMC
-    estatura = float(v['-ESTATURA-'])
-    peso = float(v['-PESO-'])
-    imc = peso / estatura ** 2
-    msg0 = 'El índice de masa corporal es: ', imc
-    if imc >= 25:
-        msg1 = 'Tienes sobrepeso'
-    else:
-        msg1 = 'No tienes sobrepeso'
-    return msg0,msg1
-
+    try:
+        estatura = float(v['-ESTATURA-'])
+        peso = float(v['-PESO-'])
+        imc = peso / estatura ** 2
+        msg0 = 'El índice de masa corporal es: ' + str(imc)
+        if imc >= 25:
+            msg1 = 'Tienes sobrepeso'
+        else:
+            msg1 = 'No tienes sobrepeso'
+    except ValueError:
+        msg0 = 'Los campos están vacíos'
+        msg1 = 'o no hay valores numéricos'
+    except ZeroDivisionError:
+        msg0 = 'No es posible que la estatura sea 0m'
+        msg1 = ''
+    return msg0, msg1
 
 #Función para limpiar campos
 def limpiarCampos(w):
